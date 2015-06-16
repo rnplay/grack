@@ -34,7 +34,7 @@ module Grack
     end
 
     def popen_options
-      { chdir: repo }
+      {  }
     end
 
     def popen_env

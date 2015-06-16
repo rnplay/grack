@@ -34,7 +34,7 @@ module Grack
     end
 
     def popen_options
-      { chdir: repo, unsetenv_others: true }
+      { chdir: repo }
     end
 
     def popen_env
@@ -60,7 +60,7 @@ module Grack
       return false unless File.exists?(repo) && File.realpath(repo) == repo
 
       match = execute(%W(rev-parse --git-dir)).match(/\.$|\.git$/)
-      
+
       if match.to_s == '.git'
         # Since the parent could be a git repo, we want to make sure the actual repo contains a git dir.
         return false unless Dir.entries(repo).include?('.git')

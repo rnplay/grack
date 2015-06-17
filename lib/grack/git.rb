@@ -38,7 +38,7 @@ module Grack
     end
 
     def popen_env
-      { 'PATH' => ENV['PATH'], 'GL_ID' => ENV['GL_ID'] }
+      { 'PATH' => ENV['PATH'], 'GL_ID' => ENV['GL_ID'], 'REQUEST_PATH' => ENV['PATH_INFO'] }
     end
 
     def config_setting(service_name)
